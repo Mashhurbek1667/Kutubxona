@@ -52,7 +52,6 @@ AppAsset::register($this);
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="main-nav">
             <div class="container">
-
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
                             data-target=".navbar-ex1-collapse">
@@ -62,7 +61,7 @@ AppAsset::register($this);
                         <span class="icon-bar"></span>
                     </button>
                     <h1>
-                        <a class="navbar-brand" href="index.html">Chronicle</a>
+                        <a class="navbar-brand" href="index.php">Chronicle</a>
                     </h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,10 +72,10 @@ AppAsset::register($this);
                             <a class="page-scroll" href="#page-top"></a>
                         </li>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="about.html">about us</a>
+                            <a href="about.php">about us</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">shop
@@ -84,16 +83,16 @@ AppAsset::register($this);
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="shop.html">product catalog</a>
+                                    <a href="shop.php">product catalog</a>
                                 </li>
                                 <li>
-                                    <a href="single_product.html">single product</a>
+                                    <a href="single_product.php">single product</a>
                                 </li>
                                 <li>
-                                    <a href="checkout.html">checkout</a>
+                                    <a href="checkout.php">checkout</a>
                                 </li>
                                 <li>
-                                    <a href="payment.html">Payment</a>
+                                    <a href="payment.php">Payment</a>
                                 </li>
                             </ul>
                         </li>
@@ -103,27 +102,27 @@ AppAsset::register($this);
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="footer.html">Default</a>
+                                    <a href="footer.php">Default</a>
                                 </li>
                                 <li>
-                                    <a href="footer1.html">variant1</a>
+                                    <a href="footer1.php">variant1</a>
                                 </li>
                                 <li>
-                                    <a href="footer2.html">variant2</a>
+                                    <a href="footer2.php">variant2</a>
                                 </li>
                                 <li>
-                                    <a href="footer3.html">variant3</a>
+                                    <a href="footer3.php">variant3</a>
                                 </li>
                                 <li>
-                                    <a href="footer4.html">variant4</a>
+                                    <a href="footer4.php">variant4</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contact.html">Contact us</a>
+                            <a href="contact.php">Contact us</a>
                         </li>
                         <li>
-                            <a href="login.html" title="SignIn & SignUp">
+                            <a href="login.php" title="SignIn & SignUp">
                                 <span class="fa fa-user nav-icon" aria-hidden="true"></span>
                             </a>
                         </li>
@@ -180,22 +179,22 @@ AppAsset::register($this);
                 <span class="abtext">layouts</span>
             </h4>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer1.html">
+                <a href="footer1.php">
                     <img src="images/f1.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer2.html">
+                <a href="footer2.php">
                     <img src="images/f2.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer3.html">
+                <a href="footer3.php">
                     <img src="images/f3.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer4.html">
+                <a href="footer4.php">
                     <img src="images/f4.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
@@ -232,7 +231,7 @@ AppAsset::register($this);
                 <!-- footer-grid1 -->
                 <div class="col-md-3 col-sm-6 footer-logo">
                     <h3>
-                        <a href="index.html">Chronicle</a>
+                        <a href="index.php">Chronicle</a>
                     </h3>
                     <h4>about us</h4>
                     <p>Vallis Molestie Arcu Morbi Dapibus Suscipit Ante Sit Efficitur Eu estie Arcu Mor Anestie Ate Vesti.</p>
@@ -243,16 +242,16 @@ AppAsset::register($this);
                     <h4>navigation</h4>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="about.html">About us</a>
+                            <a href="about.php">About us</a>
                         </li>
                         <li>
-                            <a href="shop.html">shop</a>
+                            <a href="shop.php">shop</a>
                         </li>
                         <li>
-                            <a href="contact.html">contact us</a>
+                            <a href="contact.php">contact us</a>
                         </li>
                     </ul>
                 </div>
