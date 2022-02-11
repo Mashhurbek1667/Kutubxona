@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
+
+$this->title = 'footer2';
 ?>
 <!-- banner -->
 <div class="banner-bg-inner">

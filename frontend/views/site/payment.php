@@ -5,6 +5,7 @@
 use yii\web\View;
 
 $this->title = 'My Yii Application';
+$this->title = 'payment';
 ?>
 <!-- banner -->
 <div class="banner-bg-inner">

@@ -5,6 +5,8 @@
 use yii\web\View;
 
 $this->title = 'My Yii Application';
+
+$this->title = 'footer';
 ?>
 <!-- footer-layouts -->
 <div class="addon-sec section">

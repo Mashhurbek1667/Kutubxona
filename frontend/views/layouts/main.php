@@ -61,7 +61,7 @@ AppAsset::register($this);
                         <span class="icon-bar"></span>
                     </button>
                     <h1>
-                        <a class="navbar-brand" href="index.php">Chronicle</a>
+                        <a class="navbar-brand" href="site/index">Chronicle</a>
                     </h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->

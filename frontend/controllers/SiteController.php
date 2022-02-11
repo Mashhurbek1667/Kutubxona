@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
+use phpDocumentor\Reflection\Types\This;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -255,5 +256,33 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+    public function actionCheckout(){
+        return $this->render('checkout');
+    }
+    public function actionFooter(){
+        return $this->render('footer');
+    }
+    public function actionFooter1(){
+        return $this->render('footer');
+    }
+    public function actionFooter2(){
+        return $this->render('footer2');
+    }
+    public function actionFooter3(){
+        return $this->render('footer3');
+    }
+    public function actionFooter4(){
+        return $this->render('footer4');
+    }
+    public function actionPayment(){
+        return $this->render('payment');
+    }
+    public function actionShop()
+    {
+        return $this->render('shop');
+    }
+    public function actionSingle_product(){
+        return $this->render('single_product');
     }
 }

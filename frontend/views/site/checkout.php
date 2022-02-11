@@ -2,9 +2,11 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Html;
 use yii\web\View;
 
-$this->title = 'My Yii Application';
+$this->title = 'checkout';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <!-- banner -->
 <div class="banner-bg-inner">
