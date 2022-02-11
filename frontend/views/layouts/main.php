@@ -61,7 +61,7 @@ AppAsset::register($this);
                         <span class="icon-bar"></span>
                     </button>
                     <h1>
-                        <a class="navbar-brand" href="site/index">Chronicle</a>
+                        <a class="navbar-brand" href="<?=Yii::$app->homeUrl?>">Chronicle</a>
                     </h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,10 +72,10 @@ AppAsset::register($this);
                             <a class="page-scroll" href="#page-top"></a>
                         </li>
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="<?=Yii::$app->homeUrl?>">Home</a>
                         </li>
                         <li>
-                            <a href="about.php">about us</a>
+                            <a href="<?=\yii\helpers\Url::to(['site/about'])?>">about us</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">shop
