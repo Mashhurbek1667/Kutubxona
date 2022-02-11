@@ -83,16 +83,16 @@ AppAsset::register($this);
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="shop.php">product catalog</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/shop'])?>">product catalog</a>
                                 </li>
                                 <li>
-                                    <a href="single_product.php">single product</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/single_product'])?>">single product</a>
                                 </li>
                                 <li>
-                                    <a href="checkout.php">checkout</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/checkout'])?>">checkout</a>
                                 </li>
                                 <li>
-                                    <a href="payment.php">Payment</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/payment'])?>">Payment</a>
                                 </li>
                             </ul>
                         </li>
@@ -102,27 +102,27 @@ AppAsset::register($this);
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="footer.php">Default</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/footer'])?>">Default</a>
                                 </li>
                                 <li>
-                                    <a href="footer1.php">variant1</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/footer1'])?>">variant1</a>
                                 </li>
                                 <li>
-                                    <a href="footer2.php">variant2</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/footer2'])?>">variant2</a>
                                 </li>
                                 <li>
-                                    <a href="footer3.php">variant3</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/footer3'])?>">variant3</a>
                                 </li>
                                 <li>
-                                    <a href="footer4.php">variant4</a>
+                                    <a href="<?=\yii\helpers\Url::to(['site/footer4'])?>">variant4</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contact.php">Contact us</a>
+                            <a href="<?=\yii\helpers\Url::to(['site/contact'])?>">Contact us</a>
                         </li>
                         <li>
-                            <a href="login.php" title="SignIn & SignUp">
+                            <a href="<?=\yii\helpers\Url::to(['site/login'])?>" title="SignIn & SignUp">
                                 <span class="fa fa-user nav-icon" aria-hidden="true"></span>
                             </a>
                         </li>
@@ -179,22 +179,22 @@ AppAsset::register($this);
                 <span class="abtext">layouts</span>
             </h4>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer1.php">
+                <a href="<?=\yii\helpers\Url::to(['site/footer1'])?>">
                     <img src="images/f1.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer2.php">
+                <a href="<?=\yii\helpers\Url::to(['site/footer2'])?>">
                     <img src="images/f2.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer3.php">
+                <a href="<?=\yii\helpers\Url::to(['site/footer3'])?>">
                     <img src="images/f3.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="footer4.php">
+                <a href="<?=\yii\helpers\Url::to(['site/footer4'])?>">
                     <img src="images/f4.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
@@ -231,7 +231,7 @@ AppAsset::register($this);
                 <!-- footer-grid1 -->
                 <div class="col-md-3 col-sm-6 footer-logo">
                     <h3>
-                        <a href="index.php">Chronicle</a>
+                        <a href="<?=Yii::$app->homeUrl?>">Chronicle</a>
                     </h3>
                     <h4>about us</h4>
                     <p>Vallis Molestie Arcu Morbi Dapibus Suscipit Ante Sit Efficitur Eu estie Arcu Mor Anestie Ate Vesti.</p>
@@ -242,16 +242,16 @@ AppAsset::register($this);
                     <h4>navigation</h4>
                     <ul>
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="<?=Yii::$app->homeUrl?>">Home</a>
                         </li>
                         <li>
-                            <a href="about.php">About us</a>
+                            <a href="<?=\yii\helpers\Url::to(['site/about'])?>">About us</a>
                         </li>
                         <li>
-                            <a href="shop.php">shop</a>
+                            <a href="<?=\yii\helpers\Url::to(['site/shop'])?>">shop</a>
                         </li>
                         <li>
-                            <a href="contact.php">contact us</a>
+                            <a href="<?=\yii\helpers\Url::to(['site/contact'])?>">contact us</a>
                         </li>
                     </ul>
                 </div>
