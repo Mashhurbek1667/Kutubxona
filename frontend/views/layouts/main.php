@@ -180,7 +180,7 @@ AppAsset::register($this);
             </h4>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                 <a href="<?=\yii\helpers\Url::to(['site/footer1'])?>">
-                    <img src="images/f1.png" class="img-responsive" alt="chronicle-image">
+                    <img src="../../web/images/f1.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
