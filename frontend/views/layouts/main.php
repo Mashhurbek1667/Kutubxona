@@ -180,22 +180,22 @@ AppAsset::register($this);
             </h4>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                 <a href="<?=\yii\helpers\Url::to(['site/footer1'])?>">
-                    <img src="../../web/images/f1.png" class="img-responsive" alt="chronicle-image">
+                    <img src="../images/f1.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                 <a href="<?=\yii\helpers\Url::to(['site/footer2'])?>">
-                    <img src="images/f2.png" class="img-responsive" alt="chronicle-image">
+                    <img src="../images/f2.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                 <a href="<?=\yii\helpers\Url::to(['site/footer3'])?>">
-                    <img src="images/f3.png" class="img-responsive" alt="chronicle-image">
+                    <img src="../images/f3.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                 <a href="<?=\yii\helpers\Url::to(['site/footer4'])?>">
-                    <img src="images/f4.png" class="img-responsive" alt="chronicle-image">
+                    <img src="../images/f4.png" class="img-responsive" alt="chronicle-image">
                 </a>
             </div>
             <div class="clearfix"> </div>
@@ -262,7 +262,7 @@ AppAsset::register($this);
                     <div class="blog1">
                         <div class="col-md-3 col-sm-3 col-xs-2 bl1">
                             <a href="#">
-                                <img src="images/b1.jpg" alt="" class="img-responsive" />
+                                <img src="../images/b1.jpg" alt="" class="img-responsive" />
                             </a>
                         </div>
                         <div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -274,7 +274,7 @@ AppAsset::register($this);
                     <div class="blog1">
                         <div class="col-md-3 col-sm-3 col-xs-2 bl1">
                             <a href="#">
-                                <img src="images/b2.jpg" alt="" class="img-responsive" />
+                                <img src="../images/b2.jpg" alt="" class="img-responsive" />
                             </a>
                         </div>
                         <div class="col-md-9 col-sm-9 col-xs-10 bl2">
