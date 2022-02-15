@@ -171,37 +171,6 @@ AppAsset::register($this);
 
     <?= $content ?>
 
-    <!-- footer-layouts -->
-    <div class="addon-sec section">
-        <div class="container">
-            <h4 class="rad-txt">
-                <span class="abtxt1">footer</span>
-                <span class="abtext">layouts</span>
-            </h4>
-            <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="<?=\yii\helpers\Url::to(['site/footer1'])?>">
-                    <img src="../images/f1.png" class="img-responsive" alt="chronicle-image">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="<?=\yii\helpers\Url::to(['site/footer2'])?>">
-                    <img src="../images/f2.png" class="img-responsive" alt="chronicle-image">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="<?=\yii\helpers\Url::to(['site/footer3'])?>">
-                    <img src="../images/f3.png" class="img-responsive" alt="chronicle-image">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-                <a href="<?=\yii\helpers\Url::to(['site/footer4'])?>">
-                    <img src="../images/f4.png" class="img-responsive" alt="chronicle-image">
-                </a>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <!-- //footer-layouts -->
     <!-- footer -->
     <div class="footer-bottom section">
         <div class="container">
