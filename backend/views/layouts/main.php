@@ -36,6 +36,15 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => Yii::t('yii','Category'), 'url' => ['/category/index']],
+        ['label' => Yii::t('yii','Publisher'), 'url' => ['/publisher/index']],
+        ['label' => Yii::t('yii','Author'), 'url' => ['/author/index']],
+        ['label' => Yii::t('yii','Format'), 'url' => ['/format/index']],
+        ['label' => Yii::t('yii','Language'), 'url' => ['/language/index']],
+        ['label' => Yii::t('yii','Book'), 'url' => ['/book/index']],
+        ['label' => Yii::t('yii','Order'), 'url' => ['/order/index']],
+        ['label' => Yii::t('yii','Orderitem'), 'url' => ['/order-item/index']],
+        ['label' => Yii::t('yii','Visitor'), 'url' => ['/visitor/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
