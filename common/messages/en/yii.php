@@ -17,15 +17,15 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Auth Key' => '',
-    'Created At' => '',
-    'Email' => '',
-    'ID' => '',
-    'Is Admin' => '',
-    'Password Hash' => '',
-    'Password Reset Token' => '',
-    'Status' => '',
-    'Updated At' => '',
-    'Username' => '',
-    'Verification Token' => '',
+//    'Auth Key' => '',
+//    'Created At' => '',
+//    'Email' => '',
+//    'ID' => '',
+//    'Is Admin' => '',
+//    'Password Hash' => '',
+//    'Password Reset Token' => '',
+//    'Status' => '',
+//    'Updated At' => '',
+//    'Username' => '',
+//    'Verification Token' => '',
 ];
