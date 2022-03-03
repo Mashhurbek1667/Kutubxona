@@ -2,7 +2,6 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
 $this->title = 'index';
 ?>
 <div class="site-index">
@@ -36,21 +35,11 @@ $this->title = 'index';
                     <p>Billed as the largest in the world,and the library's collection holds more than 3 million items.</p>
                     <h5>the library catalogue</h5>
                     <ul class="about-list">
-                        <li>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>International Collections</li>
-                        <li>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>ebooks</li>
-                        <li>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
-                        <li>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>scientific and Technical Information</li>
-                        <li>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>Comic Books</li>
-                        <li>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
-                        <li>
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
-
+                        <?php foreach ($dataProvider->getModels() as $model) { ?>
+                            <li>
+                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i><?=$model->name?>
+                            </li>
+                        <?php } ?>
                     </ul>
                     <a href="#">view more</a>
                 </div>

@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use common\models\CategorySearch;
+use common\models\VisitorSearch;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use phpDocumentor\Reflection\Types\This;
@@ -76,7 +78,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new CategorySearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    /*    $searchModel =new VisitorSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);*/
+        return $this->render('index',[
+            'dataProvider' => $dataProvider,
+            ]);
     }
 
     /**

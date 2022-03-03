@@ -96,28 +96,6 @@ AppAsset::register($this);
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">footers
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?=\yii\helpers\Url::to(['site/footer'])?>">Default</a>
-                                </li>
-                                <li>
-                                    <a href="<?=\yii\helpers\Url::to(['site/footer1'])?>">variant1</a>
-                                </li>
-                                <li>
-                                    <a href="<?=\yii\helpers\Url::to(['site/footer2'])?>">variant2</a>
-                                </li>
-                                <li>
-                                    <a href="<?=\yii\helpers\Url::to(['site/footer3'])?>">variant3</a>
-                                </li>
-                                <li>
-                                    <a href="<?=\yii\helpers\Url::to(['site/footer4'])?>">variant4</a>
-                                </li>
-                            </ul>
-                        </li>
                         <li>
                             <a href="<?=\yii\helpers\Url::to(['site/contact'])?>">Contact us</a>
                         </li>
