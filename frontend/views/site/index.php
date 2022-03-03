@@ -1,6 +1,9 @@
 <?php
 
-/* @var $this yii\web\View */
+/* @var $this yii\web\View
+ *
+ * @var common\models\Visitor $visitors[]
+ */
 
 $this->title = 'index';
 ?>
@@ -17,7 +20,7 @@ $this->title = 'index';
                 </h2>
                 <ul class="banner-txt">
                     <li>share.</li>
-                    <li> explore. </li>
+                    <li> explore.</li>
                     <li>amplify.</li>
                 </ul>
             </div>
@@ -32,12 +35,13 @@ $this->title = 'index';
             <div class="col-md-7 about-left-grid">
                 <div class="inner-about2">
                     <h4>the splendid Central Library</h4>
-                    <p>Billed as the largest in the world,and the library's collection holds more than 3 million items.</p>
+                    <p>Billed as the largest in the world,and the library's collection holds more than 3 million
+                        items.</p>
                     <h5>the library catalogue</h5>
                     <ul class="about-list">
-                        <?php foreach ($dataProvider->getModels() as $model) { ?>
+                        <?php foreach ($categories as $model) { ?>
                             <li>
-                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i><?=$model->name?>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i><?= $model->name ?>
                             </li>
                         <?php } ?>
                     </ul>
@@ -57,7 +61,8 @@ $this->title = 'index';
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 agileits elite-services2 w3layouts bottom-gds" data-aos="fade-down">
+                        <div class="col-md-6 col-sm-6 agileits elite-services2 w3layouts bottom-gds"
+                             data-aos="fade-down">
                             <div class="bott-img bott-img1 agileits w3layouts">
                                 <div class="icon-holder agileits w3layouts">
                                     <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
@@ -90,7 +95,8 @@ $this->title = 'index';
             </h4>
             <!-- about-bottom grid1 -->
             <div class="col-md-6 about-bottom-right">
-                <p class="abt-p">Etiam massa quam, efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit ante,
+                <p class="abt-p">Etiam massa quam, efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus
+                    suscipit ante,
                     sit efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit an amet pulvinar
                     risus.
                 </p>
@@ -194,7 +200,9 @@ $this->title = 'index';
                             </div>
                             <div class="stats-right">
                                 <h6>volumes</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='221073' data-delay='.5' data-increment="300">221073</div>
+                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0'
+                                     data-max='221073' data-delay='.5' data-increment="300">221073
+                                </div>
 
                             </div>
                             <div class="clearfix"></div>
@@ -206,7 +214,9 @@ $this->title = 'index';
                             </div>
                             <div class="stats-right">
                                 <h6>branches</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='780' data-delay='.5' data-increment="50">980</div>
+                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0'
+                                     data-max='780' data-delay='.5' data-increment="50">980
+                                </div>
 
                             </div>
                             <div class="clearfix"></div>
@@ -219,7 +229,9 @@ $this->title = 'index';
                             </div>
                             <div class="stats-right">
                                 <h6>e-books</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='9800' data-delay='.5' data-increment="50">9800</div>
+                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0'
+                                     data-max='9800' data-delay='.5' data-increment="50">9800
+                                </div>
 
                             </div>
                             <div class="clearfix"></div>
@@ -231,7 +243,9 @@ $this->title = 'index';
                             </div>
                             <div class="stats-right">
                                 <h6>visitors</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='123623' data-delay='.5' data-increment="300">123623</div>
+                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0'
+                                     data-max='<?=$visitors_count?>' data-delay='.5' data-increment="300"><?=$visitors_count?>
+                                </div>
 
                             </div>
                             <div class="clearfix"></div>
@@ -361,10 +375,10 @@ $this->title = 'index';
                         </div>
                     </div>
                     <!-- //team individual grid -->
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div>
                 <!-- //team grid3 -->
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
             <!-- //team-row ends here -->
         </div>
@@ -381,131 +395,85 @@ $this->title = 'index';
             <div id="Carousel" class="slide carousel">
                 <!-- Carousel items -->
                 <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="row">
+                    <?php $cnt = 0; $class_active = false; foreach ($visitors as $id => $visitor) : ?>
+                        <?php if ($cnt % 3 == 0) : ?>
+                            <div class="item <?= (!$class_active) ? 'active' : '' ?>">
+                            <div class="row">
+                        <?php endif; ?>
+
+                                    <?php if (($id+1) % 4 == 1 ) : ?>
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids">
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>convallis felis</h6>
-                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non mattis.</p>
-                                        <h5>Davidson</h5>
+                                        <h6><?= $visitor->fullName ?></h6>
+                                        <p><?= $visitor->comment ?></p>
+                                        <h5><?= $visitor->theme ?></h5>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3  img-testi">
-                                        <img class="img-responsive" src="../images/c3.jpg" alt="">
+                                        <img class="img-responsive" src="../images/c3.jpg" alt="Visitor's image">
                                     </div>
-                                    <div class="clearfix"> </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
+                                    <?php elseif (($id+1) % 4 == 2): ?>
+
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids t2">
                                     <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
                                         <img class="img-responsive" src="../images/c2.jpg" alt="">
                                     </div>
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>Cras rutrum</h6>
-                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
-                                        <h5>Clifford</h5>
+                                        <h6><?= $visitor->fullName ?></h6>
+                                        <p><?= $visitor->comment ?></p>
+                                        <h5><?= $visitor->theme ?></h5>
                                     </div>
 
-                                    <div class="clearfix"> </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
+                                    <?php elseif (($id+1) % 4 == 3): ?>
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids">
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>felis mattis</h6>
-                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non yallis.</p>
-                                        <h5>Mercurio</h5>
+                                        <h6><?= $visitor->fullName ?></h6>
+                                        <p><?= $visitor->comment ?></p>
+                                        <h5><?= $visitor->theme ?></h5>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
                                         <img class="img-responsive" src="../images/c4.jpg" alt="">
                                     </div>
-                                    <div class="clearfix"> </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
+                                    <?php elseif (($id+1) % 4 == 0): ?>
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids t2">
                                     <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
                                         <img class="img-responsive" src="../images/c1.jpg" alt="">
                                     </div>
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>Cras rutrum</h6>
-                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
-                                        <h5>Clifford</h5>
+                                        <h6><?= $visitor->fullName ?></h6>
+                                        <p><?= $visitor->comment ?></p>
+                                        <h5><?= $visitor->theme ?></h5>
                                     </div>
-                                    <div class="clearfix"> </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
-                        </div>
-                        <!--.row-->
-                    </div>
-                    <!--.item-->
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-6  testi-main">
-                                <div class="testi-grids">
-                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>convallis felis</h6>
-                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non mattis.</p>
-                                        <h5>Davidson</h5>
-                                    </div>
-                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                        <img class="img-responsive" src="../images/c3.jpg" alt="">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 testi-main">
-                                <div class="testi-grids t2">
-                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                        <img class="img-responsive" src="../images/c2.jpg" alt="">
-                                    </div>
-                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>Cras rutrum</h6>
-                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
-                                        <h5>Clifford</h5>
-                                    </div>
+                                    <?php endif; ?>
 
-                                    <div class="clearfix"> </div>
-                                </div>
+                        <?php if ($cnt % 3 == 0) : ?>
                             </div>
-                            <div class="col-md-6  testi-main">
-                                <div class="testi-grids">
-                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>felis mattis</h6>
-                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non yallis.</p>
-                                        <h5>Mercurio</h5>
-                                    </div>
-                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                        <img class="img-responsive" src="../images/c4.jpg" alt="">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
+                            <!--.row-->
                             </div>
-                            <div class="col-md-6  testi-main">
-                                <div class="testi-grids t2">
-                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                        <img class="img-responsive" src="../images/c1.jpg" alt="">
-                                    </div>
-                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6>Cras rutrum</h6>
-                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
-                                        <h5>Clifford</h5>
-                                    </div>
-
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--.row-->
-                    </div>
+                        <?php endif; ?>
+                    <?php $class_active = true; $cnt++; endforeach; ?>
                 </div>
                 <!--.carousel-inner-->
                 <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
                 <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
             </div>
             <!--.Carousel-->
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
     </div>
     <!-- //testimonials-->

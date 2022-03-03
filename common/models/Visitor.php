@@ -18,6 +18,9 @@ use yii\behaviors\TimestampBehavior;
  */
 class Visitor extends \yii\db\ActiveRecord
 {
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+
     /**
      * {@inheritdoc}
      */
@@ -48,6 +51,8 @@ class Visitor extends \yii\db\ActiveRecord
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['fullName', 'theme'], 'string', 'max' => 255],
             [['comment'], 'string', 'max' => 500],
+            ['status', 'default', 'value' => self::STATUS_INACTIVE],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE]],
         ];
     }
 

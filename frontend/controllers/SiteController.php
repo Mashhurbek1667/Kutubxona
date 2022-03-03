@@ -2,7 +2,9 @@
 
 namespace frontend\controllers;
 
+use common\models\Category;
 use common\models\CategorySearch;
+use common\models\Visitor;
 use common\models\VisitorSearch;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -78,13 +80,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CategorySearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-    /*    $searchModel =new VisitorSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);*/
-        return $this->render('index',[
-            'dataProvider' => $dataProvider,
-            ]);
+        $categories = Category::find()->limit(7)->all();//xato
+        $visitors = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->all();
+        $visitors_count = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->count();
+
+        /*return $this->render('index', [
+            'categories' => $categories,
+            'visitors' => $visitors,
+        ]);*/
+        return $this->render('index', compact('categories', 'visitors', 'visitors_count'));
     }
 
     /**
@@ -226,8 +230,8 @@ class SiteController extends Controller
      * Verify email address
      *
      * @param string $token
-     * @throws BadRequestHttpException
      * @return yii\web\Response
+     * @throws BadRequestHttpException
      */
     public function actionVerifyEmail($token)
     {
@@ -265,32 +269,49 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
-    public function actionCheckout(){
+
+    public function actionCheckout()
+    {
         return $this->render('checkout');
     }
-    public function actionFooter(){
+
+    public function actionFooter()
+    {
         return $this->render('footer');
     }
-    public function actionFooter1(){
+
+    public function actionFooter1()
+    {
         return $this->render('footer');
     }
-    public function actionFooter2(){
+
+    public function actionFooter2()
+    {
         return $this->render('footer2');
     }
-    public function actionFooter3(){
+
+    public function actionFooter3()
+    {
         return $this->render('footer3');
     }
-    public function actionFooter4(){
+
+    public function actionFooter4()
+    {
         return $this->render('footer4');
     }
-    public function actionPayment(){
+
+    public function actionPayment()
+    {
         return $this->render('payment');
     }
+
     public function actionShop()
     {
         return $this->render('shop');
     }
-    public function actionSingle_product(){
+
+    public function actionSingle_product()
+    {
         return $this->render('single_product');
     }
 }
