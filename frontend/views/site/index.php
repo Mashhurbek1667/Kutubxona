@@ -395,86 +395,133 @@ $this->title = 'index';
             <div id="Carousel" class="slide carousel">
                 <!-- Carousel items -->
                 <div class="carousel-inner">
-                    <?php $cnt = 0; $class_active = false; foreach ($visitors as $id => $visitor) : ?>
-                        <?php if ($cnt % 3 == 0) : ?>
-                            <div class="item <?= (!$class_active) ? 'active' : '' ?>">
-                            <div class="row">
-                        <?php endif; ?>
-
-                                    <?php if (($id+1) % 4 == 1 ) : ?>
+                    <div class="item active">
+                        <div class="row">
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids">
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6><?= $visitor->fullName ?></h6>
-                                        <p><?= $visitor->comment ?></p>
-                                        <h5><?= $visitor->theme ?></h5>
+                                        <h6>convallis felis</h6>
+                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non mattis.</p>
+                                        <h5>Davidson</h5>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3  img-testi">
-                                        <img class="img-responsive" src="../images/c3.jpg" alt="Visitor's image">
+                                        <img class="img-responsive" src="images/c3.jpg" alt="">
                                     </div>
-                                    <div class="clearfix"></div>
+                                    <div class="clearfix"> </div>
                                 </div>
                             </div>
-                                    <?php elseif (($id+1) % 4 == 2): ?>
-
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids t2">
                                     <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                        <img class="img-responsive" src="../images/c2.jpg" alt="">
+                                        <img class="img-responsive" src="images/c2.jpg" alt="">
                                     </div>
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6><?= $visitor->fullName ?></h6>
-                                        <p><?= $visitor->comment ?></p>
-                                        <h5><?= $visitor->theme ?></h5>
+                                        <h6>Cras rutrum</h6>
+                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
+                                        <h5>Clifford</h5>
                                     </div>
 
-                                    <div class="clearfix"></div>
+                                    <div class="clearfix"> </div>
                                 </div>
                             </div>
-                                    <?php elseif (($id+1) % 4 == 3): ?>
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids">
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6><?= $visitor->fullName ?></h6>
-                                        <p><?= $visitor->comment ?></p>
-                                        <h5><?= $visitor->theme ?></h5>
+                                        <h6>felis mattis</h6>
+                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non yallis.</p>
+                                        <h5>Mercurio</h5>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                        <img class="img-responsive" src="../images/c4.jpg" alt="">
+                                        <img class="img-responsive" src="images/c4.jpg" alt="">
                                     </div>
-                                    <div class="clearfix"></div>
+                                    <div class="clearfix"> </div>
                                 </div>
                             </div>
-                                    <?php elseif (($id+1) % 4 == 0): ?>
                             <div class="col-md-6  testi-main">
                                 <div class="testi-grids t2">
                                     <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                        <img class="img-responsive" src="../images/c1.jpg" alt="">
+                                        <img class="img-responsive" src="images/c1.jpg" alt="">
                                     </div>
                                     <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
-                                        <h6><?= $visitor->fullName ?></h6>
-                                        <p><?= $visitor->comment ?></p>
-                                        <h5><?= $visitor->theme ?></h5>
+                                        <h6>Cras rutrum</h6>
+                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
+                                        <h5>Clifford</h5>
                                     </div>
-                                    <div class="clearfix"></div>
+                                    <div class="clearfix"> </div>
                                 </div>
                             </div>
-                                    <?php endif; ?>
+                        </div>
+                        <!--.row-->
+                    </div>
+                    <!--.item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6  testi-main">
+                                <div class="testi-grids">
+                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                        <h6>convallis felis</h6>
+                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non mattis.</p>
+                                        <h5>Davidson</h5>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                        <img class="img-responsive" src="images/c3.jpg" alt="">
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 testi-main">
+                                <div class="testi-grids t2">
+                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                        <img class="img-responsive" src="images/c2.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                        <h6>Cras rutrum</h6>
+                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
+                                        <h5>Clifford</h5>
+                                    </div>
 
-                        <?php if ($cnt % 3 == 0) : ?>
+                                    <div class="clearfix"> </div>
+                                </div>
                             </div>
-                            <!--.row-->
+                            <div class="col-md-6  testi-main">
+                                <div class="testi-grids">
+                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                        <h6>felis mattis</h6>
+                                        <p>Lorem ipsum dolor sit amet.Cras rutrum iaculis enim, non yallis.</p>
+                                        <h5>Mercurio</h5>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                        <img class="img-responsive" src="images/c4.jpg" alt="">
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
                             </div>
-                        <?php endif; ?>
-                    <?php $class_active = true; $cnt++; endforeach; ?>
+                            <div class="col-md-6  testi-main">
+                                <div class="testi-grids t2">
+                                    <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                        <img class="img-responsive" src="images/c1.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                        <h6>Cras rutrum</h6>
+                                        <p>Lorem ipsum dolor sit amet. enim, non convallis felis mattis.</p>
+                                        <h5>Clifford</h5>
+                                    </div>
+
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
                 </div>
                 <!--.carousel-inner-->
                 <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
                 <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
             </div>
             <!--.Carousel-->
-            <div class="clearfix"></div>
+            <div class="clearfix"> </div>
         </div>
     </div>
     <!-- //testimonials-->
+
 </div>
