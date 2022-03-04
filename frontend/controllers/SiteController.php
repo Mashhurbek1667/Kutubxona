@@ -81,7 +81,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $categories = Category::find()->limit(7)->all();//xato
-        $visitors = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->all();
+        $visitors = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->orderBy(['id' => SORT_DESC])->limit(8)->all();
         $visitors_count = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->count();
 
         /*return $this->render('index', [
