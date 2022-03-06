@@ -5,6 +5,8 @@ namespace frontend\controllers;
 use common\models\Book;
 use common\models\Category;
 use common\models\CategorySearch;
+use common\models\Format;
+use common\models\Language;
 use common\models\Order;
 use common\models\Visitor;
 use common\models\VisitorSearch;
@@ -156,7 +158,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $categories = Category::find()->where(['status' => Visitor::STATUS_ACTIVE])->limit(7)->all();
+        $categories = Category::find()->where(['status' => Category::STATUS_ACTIVE])->limit(7)->all();
         $visitors = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->orderBy(['id' => SORT_DESC])->limit(8)->all();
         $visitors_count = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->count();
         $books_count = Book::find()->where(['status' => Book::STATUS_ACTIVE])->count();
@@ -288,7 +290,10 @@ class SiteController extends Controller
 
     public function actionShop()
     {
-        return $this->render('shop');
+        $categories = Category::find()->where(['status' => Category::STATUS_ACTIVE])->limit(5)->all();
+        $languages = Language::find()->where(['status' => Language::STATUS_ACTIVE])->limit(5)->all();
+        $formats = Format::find()->where(['status' => Format::STATUS_ACTIVE])->limit(5)->all();
+        return $this->render('shop', compact('categories','languages','formats'));
     }
 
     public function actionSingle_product()

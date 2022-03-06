@@ -1,10 +1,14 @@
 <?php
 
-/* @var $this yii\web\View */
+/* @var $this yii\web\View
+ *
+ * @var $categories [] \common\models\Category
+ * @var $languages [] \common\models\Language
+ * @var $formats [] \common\models\Format
+ */
 
 use yii\web\View;
 
-$this->title = 'My Yii Application';
 $this->title = 'shop';
 ?>
 <!-- banner -->
@@ -27,12 +31,12 @@ $this->title = 'shop';
         <div class="row">
             <ul class="btn-group btn-breadcrumb bc-list">
                 <li class="btn btn1">
-                    <a href="index.php">
+                    <a href="<?=Yii::$app->homeUrl?>">
                         <i class="glyphicon glyphicon-home"></i>
                     </a>
                 </li>
                 <li class="btn btn2">
-                    <a href="shop.php">product catalogue</a>
+                    <a href="<?=\yii\helpers\Url::to(['site/about'])?>">product catalogue</a>
                 </li>
             </ul>
         </div>
@@ -45,33 +49,22 @@ $this->title = 'shop';
         <!-- product left -->
         <div class="side-bar col-md-3">
             <!--preference -->
-            <div class="left-side">
+            <div class="left-side" <?= ($categories>7) ? "style=overflow-y:scroll;" : "";?>>
                 <h3 class="shopf-sear-headits-sear-head">
-                    Categories</h3>
+                    <?=\common\models\Category:: tableName() ?></h3>
                 <ul>
+                    <?php foreach ($categories as $category):?>
                     <li>
                         <input type="checkbox" class="checked">
-                        <span class="span">Biographies</span>
+                        <span class="span"><?=$category->name?></span>
                     </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Fiction</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Management</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Business</span>
-                    </li>
-
+                    <?php endforeach;?>
                 </ul>
             </div>
             <!-- // preference -->
             <div class="search-hotel">
                 <h3 class="shopf-sear-headits-sear-head">
-                    <span>author</span> in focus</h3>
+                    <span><?=\common\models\Author::tableName()?></span> in focus</h3>
                 <form action="#" method="post">
                     <input type="search" placeholder="search here" name="search" required="">
                     <input type="submit" value="Search">
@@ -115,61 +108,25 @@ $this->title = 'shop';
             <div class="left-side">
                 <h3 class="shopf-sear-headits-sear-head">Language</h3>
                 <ul>
+                    <?php foreach($languages as $language):?>
                     <li>
                         <input type="checkbox" class="checked">
-                        <span class="span">English</span>
+                        <span class="span"><?=$language->name?></span>
                     </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Spanish</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Japanese</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">German</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Korean</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Chinese</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">French</span>
-                    </li>
+                    <?php endforeach;?>
                 </ul>
             </div>
             <!-- //discounts -->
             <!-- Binding -->
             <div class="left-side">
-                <h3 class="shopf-sear-headits-sear-head">Format</h3>
+                <h3 class="shopf-sear-headits-sear-head"><?=\common\models\Format::tableName()?></h3>
                 <ul>
+                    <?php foreach ($formats as $format):?>
                     <li>
                         <input type="checkbox" class="checked">
-                        <span class="span">Hardcover</span>
+                        <span class="span"><?=$format->name?></span>
                     </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Board Book</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Bundle</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Paperback</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Audio Book</span>
-                    </li>
+                    <?php endforeach;?>
                 </ul>
             </div>
             <!-- //Binding -->
@@ -303,11 +260,8 @@ $this->title = 'shop';
                                     </ul>
                                     <ul class="price-list">
                                         <li>$ 100.00</li>
-                                        <li>
-                                            $200.00
-                                        </li>
+                                        <li>$200.00</li>
                                     </ul>
-
                                     <div class="clearfix"> </div>
                                 </div>
                                 <form action="#" method="post">
@@ -326,7 +280,7 @@ $this->title = 'shop';
                     <div class="col-md-3 product-men">
                         <div class="product-chr-info chr">
                             <div class="thumbnail">
-                                <a href="single_product.html">
+                                <a href="<?=\yii\helpers\Url::to(['site/single_product'])?>">
                                     <img src="../images/lib7.jpg" alt="">
                                 </a>
                             </div>
