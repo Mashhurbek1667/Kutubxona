@@ -18,7 +18,7 @@ class OrderItemSearch extends OrderItem
     {
         return [
             [['id', 'count', 'order_id', 'book_id', 'created_at', 'updated_at'], 'integer'],
-            [['price'], 'number'],
+            [['price'], 'double'],
         ];
     }
 

@@ -48,7 +48,7 @@ class OrderItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['price'], 'number'],
+            [['price'], 'double'],
             [['count', 'order_id', 'book_id', 'created_at', 'updated_at'], 'integer'],
             [['order_id', 'book_id'], 'required'],
             [['book_id'], 'exist', 'skipOnError' => true, 'targetClass' => Book::className(), 'targetAttribute' => ['book_id' => 'id']],
