@@ -24,7 +24,7 @@ class m220215_045347_create_order_table extends Migration
             'region' => $this->string(),
             'address' => $this->string(),
             'zip_code' => $this->string(),
-            'total_price' => $this->float(),
+            'total_price' => $this->double(),
             'user_id' => $this->integer()->notNull(),
             'status' => $this->integer()->defaultValue(0),
             'created_at' => $this->integer(),

@@ -23,7 +23,7 @@ class m220215_043530_create_book_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'star' => $this->float()->defaultValue(0),
-            'price' => $this->float()->defaultValue(0),
+            'price' => $this->double()->defaultValue(0),
             'discount' => $this->float()->defaultValue(0),
             'description' => $this->string(500),
             'published' => $this->date(),

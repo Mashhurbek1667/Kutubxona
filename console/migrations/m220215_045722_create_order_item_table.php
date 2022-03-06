@@ -18,7 +18,7 @@ class m220215_045722_create_order_item_table extends Migration
     {
         $this->createTable('{{%order_item}}', [
             'id' => $this->primaryKey(),
-            'price' => $this->float(),
+            'price' => $this->double(),
             'count' => $this->integer(),
             'order_id' => $this->integer()->notNull(),
             'book_id' => $this->integer()->notNull(),
