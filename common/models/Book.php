@@ -64,8 +64,7 @@ class Book extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['price'], 'double'],
-            [['star', 'price', 'discount'], 'number'],
+            [['star', 'price', 'discount'], 'double'],
             [['published'], 'safe'],
             [['page_count', 'author_id', 'language_id', 'format_id', 'publisher_id', 'category_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['name'], 'string', 'max' => 255],

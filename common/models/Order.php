@@ -56,7 +56,7 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['total_price'], 'number'],
+            [['total_price'], 'double'],
             [['user_id'], 'required'],
             [['user_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['fullName', 'phone', 'country', 'province', 'region', 'address', 'zip_code'], 'string', 'max' => 255],
