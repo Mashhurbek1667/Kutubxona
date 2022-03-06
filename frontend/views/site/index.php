@@ -3,6 +3,11 @@
 /* @var $this yii\web\View
  *
  * @var $visitors [] common\models\Visitor
+ * @var $categories [] common\models\Category
+ * @var $visitors_count [] common\models\Visitor
+ * @var $books_count [] common\models\Book
+ * @var $orders_count [] common\models\Order
+ *
  */
 
 $this->title = 'index';
@@ -199,9 +204,9 @@ $this->title = 'index';
                                 <span class="fa fa-book" aria-hidden="true"></span>
                             </div>
                             <div class="stats-right">
-                                <h6>volumes</h6>
+                                <h6>orders</h6>
                                 <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0'
-                                     data-max='221073' data-delay='.5' data-increment="300">221073
+                                     data-max='<?=$orders_count?>' data-delay='.5' data-increment="300"><?=$orders_count?>
                                 </div>
 
                             </div>
@@ -215,7 +220,7 @@ $this->title = 'index';
                             <div class="stats-right">
                                 <h6>branches</h6>
                                 <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0'
-                                     data-max='780' data-delay='.5' data-increment="50">980
+                                     data-max='1' data-delay='.5' data-increment="50">1
                                 </div>
 
                             </div>
@@ -230,7 +235,7 @@ $this->title = 'index';
                             <div class="stats-right">
                                 <h6>e-books</h6>
                                 <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0'
-                                     data-max='9800' data-delay='.5' data-increment="50">9800
+                                     data-max='<?= $books_count ?>' data-delay='.5' data-increment="50"><?= $books_count ?>
                                 </div>
 
                             </div>
@@ -481,26 +486,19 @@ $this->title = 'index';
 
                     <?php
                         $active_class = true;
-
                         endforeach;
-                        ?>
+                    ?>
 
                     <?php if ($item_counter % 4 != 0) : ?>
                             </div>
                             <!--.row-->
                         </div>
-                        <!--.item-->
+                            <!--.item-->
                     <?php endif; ?>
-
                 </div>
                 <!--.carousel-inner-->
                 <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
                 <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
             </div>
-            <!--.Carousel-->
-            <div class="clearfix"></div>
-        </div>
-    </div>
     <!-- //testimonials-->
-
 </div>

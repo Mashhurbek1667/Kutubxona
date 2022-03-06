@@ -2,8 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\models\Book;
 use common\models\Category;
 use common\models\CategorySearch;
+use common\models\Order;
 use common\models\Visitor;
 use common\models\VisitorSearch;
 use frontend\models\ResendVerificationEmailForm;
@@ -80,15 +82,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $categories = Category::find()->limit(7)->all();//xato
+        $categories = Category::find()->where(['status' => Visitor::STATUS_ACTIVE])->limit(7)->all();
         $visitors = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->orderBy(['id' => SORT_DESC])->limit(8)->all();
         $visitors_count = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->count();
+        $books_count = Book::find()->where(['status' => Book::STATUS_ACTIVE])->count();
+        $orders_count = Order::find()->where(['status' => Order::STATUS_ACTIVE])->count();
 
-        /*return $this->render('index', [
-            'categories' => $categories,
-            'visitors' => $visitors,
-        ]);*/
-        return $this->render('index', compact('categories', 'visitors', 'visitors_count'));
+        return $this->render('index', compact('categories', 'visitors', 'visitors_count','books_count','orders_count'));
     }
 
     /**
@@ -156,7 +156,13 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $categories = Category::find()->where(['status' => Visitor::STATUS_ACTIVE])->limit(7)->all();
+        $visitors = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->orderBy(['id' => SORT_DESC])->limit(8)->all();
+        $visitors_count = Visitor::find()->where(['status' => Visitor::STATUS_ACTIVE])->count();
+        $books_count = Book::find()->where(['status' => Book::STATUS_ACTIVE])->count();
+        $orders_count = Order::find()->where(['status' => Order::STATUS_ACTIVE])->count();
+
+        return $this->render('about', compact('categories', 'visitors', 'visitors_count','books_count','orders_count'));
     }
 
     /**
@@ -273,31 +279,6 @@ class SiteController extends Controller
     public function actionCheckout()
     {
         return $this->render('checkout');
-    }
-
-    public function actionFooter()
-    {
-        return $this->render('footer');
-    }
-
-    public function actionFooter1()
-    {
-        return $this->render('footer');
-    }
-
-    public function actionFooter2()
-    {
-        return $this->render('footer2');
-    }
-
-    public function actionFooter3()
-    {
-        return $this->render('footer3');
-    }
-
-    public function actionFooter4()
-    {
-        return $this->render('footer4');
     }
 
     public function actionPayment()
