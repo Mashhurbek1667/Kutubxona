@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Author;
 use common\models\Book;
 use common\models\Category;
 use common\models\CategorySearch;
@@ -293,7 +294,10 @@ class SiteController extends Controller
         $categories = Category::find()->where(['status' => Category::STATUS_ACTIVE])->limit(5)->all();
         $languages = Language::find()->where(['status' => Language::STATUS_ACTIVE])->limit(5)->all();
         $formats = Format::find()->where(['status' => Format::STATUS_ACTIVE])->limit(5)->all();
-        return $this->render('shop', compact('categories','languages','formats'));
+        $stars = Book::find()->where(['status'=>Book::STATUS_ACTIVE])->all();
+        $avtors = Book::find()->where(['status'=>Book::STATUS_ACTIVE])->all();
+        $prices = Book::find()->where(['status'=>Book::STATUS_ACTIVE])->all();
+        return $this->render('shop', compact('categories','languages','formats','stars','avtors','prices'));
     }
 
     public function actionSingle_product()
