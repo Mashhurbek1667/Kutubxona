@@ -5,50 +5,11 @@
  * @var $categories [] \common\models\Category
  * @var $languages [] \common\models\Language
  * @var $formats [] \common\models\Format
- * @var $stars [] \common\models\Book
- * @var $avtors [] \common\models\Book
- * @var $prices [] \common\models\Book
+ * @var $books [] \common\models\Book
  */
 
 use yii\web\View;
-
 $this->title = 'shop';
-if($stars===1){
-$star1="fa fa-star yellow-star";$bool1="true";
-$star2="fa fa-star gray-star";$bool2="false";
-$star3="fa fa-star gray-star";$bool3="false";
-$star4="fa fa-star gray-star";$bool4="false";
-$star5="fa fa-star gray-star";$bool5="false";
-}
-elseif($stars===2){
-$star1="fa fa-star yellow-star";$bool1="true";
-$star2="fa fa-star yellow-star";$bool2="true";
-$star3="fa fa-star gray-star";$bool3="false";
-$star4="fa fa-star gray-star";$bool4="false";
-$star5="fa fa-star gray-star";$bool5="false";
-}
-elseif($stars===3){
-    $star1="fa fa-star yellow-star";$bool1="true";
-    $star2="fa fa-star yellow-star";$bool2="true";
-    $star3="fa fa-star gray-star";$bool3="false";
-    $star4="fa fa-star gray-star";$bool4="false";
-    $star5="fa fa-star gray-star";$bool5="false";
-}
-elseif($stars===4){
-    $star1="fa fa-star yellow-star";$bool1="true";
-    $star2="fa fa-star yellow-star";$bool2="true";
-    $star3="fa fa-star yellow-star";$bool3="true";
-    $star4="fa fa-star gray-star";$bool4="false";
-    $star5="fa fa-star gray-star";$bool5="false";
-}
-elseif($stars===5){
-    $star1="fa fa-star yellow-star";$bool1="true";
-    $star2="fa fa-star yellow-star";$bool2="true";
-    $star3="fa fa-star yellow-star";$bool3="true";
-    $star4="fa fa-star yellow-star";$bool4="true";
-    $star5="fa fa-star yellow-star";$bool5="true";
-}
-else echo "";
 ?>
 <!-- banner -->
 <div class="banner-bg-inner">
@@ -257,10 +218,51 @@ else echo "";
             <div class="wrapper_top_shop">
                 <!-- product-sec1 -->
                 <div class="product-sec1">
-                    <?php foreach ($stars as $star): ?>
-                    <?php foreach ($formats as $format): ?>
-                    <?php foreach ($avtors as $avtor):?>
-                    <?php foreach ($prices as $price): ?>
+                    <?php foreach ($books as $book) :
+                        switch ($book->star){
+                            case 1:
+                                $star1="fa fa-star yellow-star";$bool1="true";
+                                $star2="fa fa-star gray-star";$bool2="false";
+                                $star3="fa fa-star gray-star";$bool3="false";
+                                $star4="fa fa-star gray-star";$bool4="false";
+                                $star5="fa fa-star gray-star";$bool5="false";
+                                break;
+                            case 2:
+                                $star1="fa fa-star yellow-star";$bool1="true";
+                                $star2="fa fa-star yellow-star";$bool2="true";
+                                $star3="fa fa-star gray-star";$bool3="false";
+                                $star4="fa fa-star gray-star";$bool4="false";
+                                $star5="fa fa-star gray-star";$bool5="false";
+                                break;
+                            case 3:
+                                $star1="fa fa-star yellow-star";$bool1="true";
+                                $star2="fa fa-star yellow-star";$bool2="true";
+                                $star3="fa fa-star gray-star";$bool3="false";
+                                $star4="fa fa-star gray-star";$bool4="false";
+                                $star5="fa fa-star gray-star";$bool5="false";
+                                break;
+                            case 4:
+                                $star1="fa fa-star yellow-star";$bool1="true";
+                                $star2="fa fa-star yellow-star";$bool2="true";
+                                $star3="fa fa-star yellow-star";$bool3="true";
+                                $star4="fa fa-star gray-star";$bool4="false";
+                                $star5="fa fa-star gray-star";$bool5="false";
+                                break;
+                            case 5:
+                                $star1="fa fa-star yellow-star";$bool1="true";
+                                $star2="fa fa-star yellow-star";$bool2="true";
+                                $star3="fa fa-star yellow-star";$bool3="true";
+                                $star4="fa fa-star yellow-star";$bool4="true";
+                                $star5="fa fa-star yellow-star";$bool5="true";
+                                break;
+                            default:
+                                $star1="";$bool1="";
+                                $star2="";$bool2="";
+                                $star3="";$bool3="";
+                                $star4="";$bool4="";
+                                $star5="";$bool5="";
+
+                    }?>
                     <div class="col-md-3 product-men">
                         <div class="product-chr-info chr">
                             <div class="thumbnail">
@@ -269,8 +271,8 @@ else echo "";
                                 </a>
                             </div>
                             <div class="caption">
-                                <h4><?=$format->name;?></h4>
-                                <p><?=$avtor->authtor_id ?></p>
+                                <h4><?=$book->name;?></h4>
+                                <p>Author</p>
                                 <div class="matrlf-mid">
                                     <ul class="rating">
                                         <li>
@@ -300,7 +302,7 @@ else echo "";
                                         </li>
                                     </ul>
                                     <ul class="price-list">
-                                        <li><?=$prices->price?></li>
+                                        <li><?=$book->price?></li>
                                         <li>$200.00</li>
                                     </ul>
                                     <div class="clearfix"> </div>
@@ -318,10 +320,7 @@ else echo "";
                             </div>
                         </div>
                     </div>
-                    <?php endforeach?>
-                    <?php endforeach?>
-                    <?php endforeach?>
-                    <?php endforeach?>
+                    <?php endforeach; ?>
                     <div class="clearfix"></div>
                 </div>
 
