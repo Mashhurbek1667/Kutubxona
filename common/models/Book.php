@@ -36,6 +36,7 @@ class Book extends \yii\db\ActiveRecord
 {
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
+
     /**
      * {@inheritdoc}
      */
@@ -160,5 +161,13 @@ class Book extends \yii\db\ActiveRecord
     public function getPublisher()
     {
         return $this->hasOne(Publisher::className(), ['id' => 'publisher_id']);
+    }
+
+    /**
+     * Get price.
+     */
+    public function getPrice()
+    {
+        return $this->price * ((100 - $this->discount) / 100);
     }
 }

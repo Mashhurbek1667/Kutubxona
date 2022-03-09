@@ -2,29 +2,27 @@
 
 namespace frontend\controllers;
 
-use common\models\Author;
 use common\models\Book;
 use common\models\Category;
-use common\models\CategorySearch;
 use common\models\Format;
 use common\models\Language;
+use common\models\LoginForm;
 use common\models\Order;
 use common\models\Visitor;
-use common\models\VisitorSearch;
-use frontend\models\ResendVerificationEmailForm;
-use frontend\models\VerifyEmailForm;
-use phpDocumentor\Reflection\Types\This;
-use Yii;
-use yii\base\InvalidArgumentException;
-use yii\web\BadRequestHttpException;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use common\models\LoginForm;
+use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
+use frontend\models\ResendVerificationEmailForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use frontend\models\VerifyEmailForm;
+use Yii;
+use yii\base\InvalidArgumentException;
+use yii\data\ActiveDataProvider;
+use yii\data\Pagination;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+use yii\web\BadRequestHttpException;
+use yii\web\Controller;
 
 /**
  * Site controller
@@ -91,7 +89,7 @@ class SiteController extends Controller
         $books_count = Book::find()->where(['status' => Book::STATUS_ACTIVE])->count();
         $orders_count = Order::find()->where(['status' => Order::STATUS_ACTIVE])->count();
 
-        return $this->render('index', compact('categories', 'visitors', 'visitors_count','books_count','orders_count'));
+        return $this->render('index', compact('categories', 'visitors', 'visitors_count', 'books_count', 'orders_count'));
     }
 
     /**
@@ -165,7 +163,7 @@ class SiteController extends Controller
         $books_count = Book::find()->where(['status' => Book::STATUS_ACTIVE])->count();
         $orders_count = Order::find()->where(['status' => Order::STATUS_ACTIVE])->count();
 
-        return $this->render('about', compact('categories', 'visitors', 'visitors_count','books_count','orders_count'));
+        return $this->render('about', compact('categories', 'visitors', 'visitors_count', 'books_count', 'orders_count'));
     }
 
     /**
@@ -294,8 +292,16 @@ class SiteController extends Controller
         $categories = Category::find()->where(['status' => Category::STATUS_ACTIVE])->limit(5)->all();
         $languages = Language::find()->where(['status' => Language::STATUS_ACTIVE])->limit(5)->all();
         $formats = Format::find()->where(['status' => Format::STATUS_ACTIVE])->limit(5)->all();
-        $books = Book::find()->where(['status'=>Book::STATUS_ACTIVE])->all();
-        return $this->render('shop', compact('categories','languages','formats','books'));
+
+
+        $books = new ActiveDataProvider([
+            'query' => Book::find()->where(['status' => Book::STATUS_ACTIVE]),
+            'pagination' => [
+                'pageSize' => 12,
+            ],
+        ]);
+
+        return $this->render('shop', compact('categories', 'languages', 'formats', 'books'));
     }
 
     public function actionSingle_product()

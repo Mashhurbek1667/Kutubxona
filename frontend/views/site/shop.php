@@ -6,9 +6,9 @@
  * @var $languages [] \common\models\Language
  * @var $formats [] \common\models\Format
  * @var $books [] \common\models\Book
+ * @var $books_pagination \yii\data\Pagination
  */
 
-use yii\web\View;
 $this->title = 'shop';
 ?>
 <!-- banner -->
@@ -31,12 +31,12 @@ $this->title = 'shop';
         <div class="row">
             <ul class="btn-group btn-breadcrumb bc-list">
                 <li class="btn btn1">
-                    <a href="<?=Yii::$app->homeUrl?>">
+                    <a href="<?= Yii::$app->homeUrl ?>">
                         <i class="glyphicon glyphicon-home"></i>
                     </a>
                 </li>
                 <li class="btn btn2">
-                    <a href="<?=\yii\helpers\Url::to(['site/about'])?>">product catalogue</a>
+                    <a href="<?= \yii\helpers\Url::to(['site/about']) ?>">product catalogue</a>
                 </li>
             </ul>
         </div>
@@ -49,22 +49,22 @@ $this->title = 'shop';
         <!-- product left -->
         <div class="side-bar col-md-3">
             <!--preference -->
-            <div class="left-side" <?= ($categories>7) ? "style=overflow-y:scroll;" : "";?>>
+            <div class="left-side" <?= ($categories > 7) ? "style=overflow-y:scroll;" : ""; ?>>
                 <h3 class="shopf-sear-headits-sear-head">
-                    <?=\common\models\Category:: tableName() ?></h3>
+                    <?= \common\models\Category:: tableName() ?></h3>
                 <ul>
-                    <?php foreach ($categories as $category):?>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span"><?=$category->name?></span>
-                    </li>
-                    <?php endforeach;?>
+                    <?php foreach ($categories as $category): ?>
+                        <li>
+                            <input type="checkbox" class="checked">
+                            <span class="span"><?= $category->name ?></span>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <!-- // preference -->
             <div class="search-hotel">
                 <h3 class="shopf-sear-headits-sear-head">
-                    <span><?=\common\models\Author::tableName()?></span> in focus</h3>
+                    <span><?= \common\models\Author::tableName() ?></span> in focus</h3>
                 <form action="#" method="post">
                     <input type="search" placeholder="search here" name="search" required="">
                     <input type="submit" value="Search">
@@ -77,7 +77,7 @@ $this->title = 'shop';
                 <ul class="dropdown-menu6">
                     <li>
                         <div id="slider-range"></div>
-                        <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+                        <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;"/>
                     </li>
                 </ul>
             </div>
@@ -107,25 +107,25 @@ $this->title = 'shop';
             <div class="left-side">
                 <h3 class="shopf-sear-headits-sear-head">Language</h3>
                 <ul>
-                    <?php foreach($languages as $language):?>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span"><?=$language->name?></span>
-                    </li>
-                    <?php endforeach;?>
+                    <?php foreach ($languages as $language): ?>
+                        <li>
+                            <input type="checkbox" class="checked">
+                            <span class="span"><?= $language->name ?></span>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <!-- //discounts -->
             <!-- Binding -->
             <div class="left-side">
-                <h3 class="shopf-sear-headits-sear-head"><?=\common\models\Format::tableName()?></h3>
+                <h3 class="shopf-sear-headits-sear-head"><?= \common\models\Format::tableName() ?></h3>
                 <ul>
-                    <?php foreach ($formats as $format):?>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span"><?=$format->name?></span>
-                    </li>
-                    <?php endforeach;?>
+                    <?php foreach ($formats as $format): ?>
+                        <li>
+                            <input type="checkbox" class="checked">
+                            <span class="span"><?= $format->name ?></span>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <!-- //Binding -->
@@ -218,100 +218,49 @@ $this->title = 'shop';
             <div class="wrapper_top_shop">
                 <!-- product-sec1 -->
                 <div class="product-sec1">
-                    <?php foreach ($books as $book) :
-                        switch ($book->star){
-                            case 1:
-                                $star1="fa fa-star yellow-star";$bool1="true";
-                                $star2="fa fa-star gray-star";$bool2="false";
-                                $star3="fa fa-star gray-star";$bool3="false";
-                                $star4="fa fa-star gray-star";$bool4="false";
-                                $star5="fa fa-star gray-star";$bool5="false";
-                                break;
-                            case 2:
-                                $star1="fa fa-star yellow-star";$bool1="true";
-                                $star2="fa fa-star yellow-star";$bool2="true";
-                                $star3="fa fa-star gray-star";$bool3="false";
-                                $star4="fa fa-star gray-star";$bool4="false";
-                                $star5="fa fa-star gray-star";$bool5="false";
-                                break;
-                            case 3:
-                                $star1="fa fa-star yellow-star";$bool1="true";
-                                $star2="fa fa-star yellow-star";$bool2="true";
-                                $star3="fa fa-star gray-star";$bool3="false";
-                                $star4="fa fa-star gray-star";$bool4="false";
-                                $star5="fa fa-star gray-star";$bool5="false";
-                                break;
-                            case 4:
-                                $star1="fa fa-star yellow-star";$bool1="true";
-                                $star2="fa fa-star yellow-star";$bool2="true";
-                                $star3="fa fa-star yellow-star";$bool3="true";
-                                $star4="fa fa-star gray-star";$bool4="false";
-                                $star5="fa fa-star gray-star";$bool5="false";
-                                break;
-                            case 5:
-                                $star1="fa fa-star yellow-star";$bool1="true";
-                                $star2="fa fa-star yellow-star";$bool2="true";
-                                $star3="fa fa-star yellow-star";$bool3="true";
-                                $star4="fa fa-star yellow-star";$bool4="true";
-                                $star5="fa fa-star yellow-star";$bool5="true";
-                                break;
-                            default:
-                                $star1="";$bool1="";
-                                $star2="";$bool2="";
-                                $star3="";$bool3="";
-                                $star4="";$bool4="";
-                                $star5="";$bool5="";
-
-                    }?>
+                    <?php foreach ($books->getModels() as $book) : ?>
                     <div class="col-md-3 product-men">
                         <div class="product-chr-info chr">
                             <div class="thumbnail">
-                                <a href="<?=\yii\helpers\Url::to(['site/single_product'])?>">
-                                    <img src="../images/lib8.jpg" alt="">
+                                <a href="single_product.html">
+                                    <img src="<?=$book->getImage()->getUrl()?>" alt="Book's image">
                                 </a>
                             </div>
                             <div class="caption">
-                                <h4><?=$book->name;?></h4>
-                                <p>Author</p>
+                                <h4><?=$book->name?></h4>
+                                <p><?=$book->author->name?></p>
                                 <div class="matrlf-mid">
                                     <ul class="rating">
-                                        <li>
-                                            <a href="#">
-                                                <span class="<?=$star1?>" aria-hidden="<?=$bool1?>"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="<?=$star2?>" aria-hidden="<?=$bool2?>"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="<?=$star3?>" aria-hidden="<?=$bool3?>"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="<?=$star4?>" aria-hidden="<?=$bool4?>"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="<?=$star5?>" aria-hidden="<?=$bool5?>"></span>
-                                            </a>
-                                        </li>
+                                        <?php for ($star = 1; $star <= $book->star; $star++): ?>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="fa fa-star yellow-star" aria-hidden="true"></span>
+                                                </a>
+                                            </li>
+                                        <?php endfor; ?>
+
+                                        <?php for ($star = $book->star + 1; $star <= 5; $star++): ?>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="fa fa-star gray-star" aria-hidden="true"></span>
+                                                </a>
+                                            </li>
+                                        <?php endfor; ?>
                                     </ul>
                                     <ul class="price-list">
-                                        <li><?=$book->price?></li>
-                                        <li>$200.00</li>
+                                        <li><?=$book->getPrice()?></li>
+                                        <li>
+                                            <?=($book->discount > 0)? $book->price : ""?>
+                                        </li>
                                     </ul>
+
                                     <div class="clearfix"> </div>
                                 </div>
                                 <form action="#" method="post">
                                     <input type="hidden" name="cmd" value="_cart">
                                     <input type="hidden" name="add" value="1">
-                                    <input type="hidden" name="chr_item" value="Book1">
-                                    <input type="hidden" name="amount" value="100.00">
+                                    <input type="hidden" name="chr_item" value="<?=$book->name?>">
+                                    <input type="hidden" name="amount" value="<?=$book->getPrice()?>">
                                     <button type="submit" class="chr-cart pchr-cart">Add to cart
                                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                     </button>
@@ -322,6 +271,15 @@ $this->title = 'shop';
                     </div>
                     <?php endforeach; ?>
                     <div class="clearfix"></div>
+                    <?php
+                    echo \yii\bootstrap4\LinkPager::widget([
+                        'pagination' => $books->pagination,
+                        /*'options' => [
+                            'class' => 'float-right mt-5'
+                        ]*/
+
+                    ]);
+                    ?>
                 </div>
 
                 <!-- //product-sec1 -->
