@@ -1,10 +1,13 @@
 <?php
 
-/* @var $this yii\web\View */
+/* @var $this yii\web\View
+ *
+ * @var $books [] common\models\Book
+ *
+ */
 
 use yii\web\View;
 
-$this->title = 'My Yii Application';
 $this->title = 'single_product';
 ?>
 <!-- banner -->
@@ -27,7 +30,7 @@ $this->title = 'single_product';
         <div class="row">
             <ul class="btn-group btn-breadcrumb bc-list">
                 <li class="btn btn1">
-                    <a href="index.php">
+                    <a href="<?=Yii::$app->homeUrl?>">
                         <i class="glyphicon glyphicon-home"></i>
                     </a>
                 </li>
@@ -35,7 +38,7 @@ $this->title = 'single_product';
                     <a href="shop.php">Product Catalogue</a>
                 </li>
                 <li class="btn btn3">
-                    <a href="single_product.php">Single product</a>
+                    <a href="<?=\yii\helpers\Url::to(['site/single_product'])?>">Single product</a>
                 </li>
             </ul>
         </div>
@@ -67,64 +70,53 @@ $this->title = 'single_product';
             </div>
 
         </div>
+        <?php foreach ($books as $book) : ?>
         <div class="col-md-8 single-right-left simpleCart_shelfItem">
             <h3>Be Creative
                 <span>Hardcover – Feb 2018</span>
             </h3>
             <p>by
-                <a href="#">Clayton Barton</a>
+                <a href="#"><?=$book->author->name?></a>
             </p>
             <div class="caption">
 
                 <ul class="rating-single">
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star yellow-star" aria-hidden="true"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star yellow-star" aria-hidden="true"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star yellow-star" aria-hidden="true"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star yellow-star" aria-hidden="true"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star yellow-star" aria-hidden="true"></span>
-                        </a>
-                    </li>
+                    <?php for ($star = 1; $star <= $book->star; $star++): ?>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-star yellow-star" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    <?php endfor; ?>
+
+                    <?php for ($star = $book->star + 1; $star <= 5; $star++): ?>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-star gray-star" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    <?php endfor; ?>
                 </ul>
                 <div class="clearfix"> </div>
-                <h6>
-                    $100.00</h6>
+                <h6><?=$book->price?></h6>
             </div>
             <div class="desc_single">
                 <h5>Description</h5>
-                <p>Pellentesque quis orci sapien. Phasellus at libero in nunc egestas tincidunt. In dictum arcu purus, ultricies tincidunt
-                    urna vehicula at. Aenean iaculis urna nec libero scelerisque, ac ullamcorper neque porta.</p>
+                <p><?=$book->description?></p>
             </div>
             <div class="occasional">
                 <h5>Specifications</h5>
                 <ul class="single_specific">
                     <li>
-                        <span>language :</span> english</li>
+                        <span>language :</span> <?=$book->language->name?></li>
                     <li>
-                        <span>format :</span> Hardcover</li>
+                        <span>format :</span> <?=$book->format->name?></li>
                     <li>
-                        <span>publisher :</span> Lorempipsum</li>
+                        <span>publisher :</span> <?=$book->publisher->name?></li>
                     <li>
                         <span>edition :</span> february 2018</li>
                     <li>
-                        <span>pages :</span> 765</li>
+                        <span>pages :</span> <?=$book->page_count?></li>
                 </ul>
 
             </div>
@@ -160,6 +152,7 @@ $this->title = 'single_product';
                 </div>
             </div>
         </div>
+        <?php endforeach;?>
         <div class="clearfix"> </div>
     </div>
 </div>

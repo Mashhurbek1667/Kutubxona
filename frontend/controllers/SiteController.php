@@ -306,6 +306,7 @@ class SiteController extends Controller
 
     public function actionSingle_product()
     {
-        return $this->render('single_product');
+        $books = Book::find()->where(['status'=>Book::STATUS_ACTIVE])->all();
+        return $this->render('single_product',compact('books'));
     }
 }
