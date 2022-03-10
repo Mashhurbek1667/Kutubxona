@@ -227,8 +227,8 @@ $this->title = 'shop';
                                 </a>
                             </div>
                             <div class="caption">
-                                <h4><?=$book->name?></h4>
-                                <p><?=$book->author->name?></p>
+                                <h4 onmouseenter="innerHTML = '<?=$book->name?>'" onmouseleave="innerHTML = '<?=(strlen($book->name) > 13)?substr($book->name,0,10).'...':$book->name?>'"><?=(strlen($book->name) > 13)?substr($book->name,0,10).'...':$book->name?></h4>
+                                <p style="height: 66px; overflow: auto"><?=$book->author->name?></p>
                                 <div class="matrlf-mid">
                                     <ul class="rating">
                                         <?php for ($star = 1; $star <= $book->star; $star++): ?>
