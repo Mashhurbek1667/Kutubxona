@@ -12,7 +12,7 @@
 $this->title = 'shop';
 ?>
 <!-- banner -->
-<div class="banner-bg-inner">
+    <div class="banner-bg-inner">
     <!-- banner-text -->
     <div class="banner-text-inner">
         <div class="container">
@@ -26,7 +26,7 @@ $this->title = 'shop';
 </div>
 <!-- //banner -->
 <!-- breadcrumbs -->
-<div class="crumbs text-center">
+    <div class="crumbs text-center">
     <div class="container">
         <div class="row">
             <ul class="btn-group btn-breadcrumb bc-list">
@@ -44,7 +44,7 @@ $this->title = 'shop';
 </div>
 <!--//breadcrumbs ends here-->
 <!-- Shop -->
-<div class="innerf-pages section">
+    <div class="innerf-pages section">
     <div class="container-cart">
         <!-- product left -->
         <div class="side-bar col-md-3">
@@ -222,7 +222,7 @@ $this->title = 'shop';
                     <div class="col-md-3 product-men">
                         <div class="product-chr-info chr">
                             <div class="thumbnail">
-                                <a href="single_product.html">
+                                <a href="<?=\yii\helpers\Url::to(['site/single_product.php'])?>">
                                     <img src="<?=$book->getImage()->getUrl()?>" alt="Book's image">
                                 </a>
                             </div>
@@ -248,13 +248,12 @@ $this->title = 'shop';
                                         <?php endfor; ?>
                                     </ul>
                                     <ul class="price-list">
-                                        <li><?=$book->getPrice()?></li>
+                                        <li><?=$book->getPrice()." $"?></li>
                                         <li>
-                                            <?=($book->discount > 0)? $book->price : ""?>
+                                            <?=($book->discount > 0)? $book->price." $" : ""?>
                                         </li>
                                     </ul>
-
-                                    <div class="clearfix"> </div>
+                                     <div class="clearfix"> </div>
                                 </div>
                                 <form action="#" method="post">
                                     <input type="hidden" name="cmd" value="_cart">
@@ -270,24 +269,22 @@ $this->title = 'shop';
                         </div>
                     </div>
                     <?php endforeach; ?>
-                    <div class="clearfix"></div>
+                           <div class="clearfix"></div>
                     <?php
                     echo \yii\bootstrap4\LinkPager::widget([
                         'pagination' => $books->pagination,
-                        /*'options' => [
+                        'options' => [
                             'class' => 'float-right mt-5'
-                        ]*/
+                        ]
 
                     ]);
                     ?>
                 </div>
-
                 <!-- //product-sec1 -->
                 <div class="clearfix"></div>
             </div>
         </div>
         <div class="clearfix"></div>
-
     </div>
 </div>
-<!--// Shop -->
+  <!--// Shop -->
