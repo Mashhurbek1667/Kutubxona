@@ -289,9 +289,9 @@ class SiteController extends Controller
 
     public function actionShop()
     {
-        $categories = Category::find()->where(['status' => Category::STATUS_ACTIVE])->limit(5)->all();
-        $languages = Language::find()->where(['status' => Language::STATUS_ACTIVE])->limit(5)->all();
-        $formats = Format::find()->where(['status' => Format::STATUS_ACTIVE])->limit(5)->all();
+        $categories = Category::find()->where(['status' => Category::STATUS_ACTIVE])->all();
+        $languages = Language::find()->where(['status' => Language::STATUS_ACTIVE])->all();
+        $formats = Format::find()->where(['status' => Format::STATUS_ACTIVE])->all();
 
 
         $books = new ActiveDataProvider([
@@ -304,9 +304,9 @@ class SiteController extends Controller
         return $this->render('shop', compact('categories', 'languages', 'formats', 'books'));
     }
 
-    public function actionSingle_product()
+    public function actionSingleProduct($id)
     {
-        $books = Book::find()->where(['status'=>Book::STATUS_ACTIVE])->all();
-        return $this->render('single_product',compact('books'));
+        $book = Book::find()->where(['id' => $id, 'status' => Book::STATUS_ACTIVE])->one();
+        return $this->render('single_product', compact('book'));
     }
 }

@@ -49,7 +49,7 @@ $this->title = 'shop';
         <!-- product left -->
         <div class="side-bar col-md-3">
             <!--preference -->
-            <div class="left-side" <?= ($categories > 7) ? "style=overflow-y:scroll;" : ""; ?>>
+            <div class="left-side" style="overflow-y:auto; height: 160px">
                 <h3 class="shopf-sear-headits-sear-head">
                     <?= \common\models\Category:: tableName() ?></h3>
                 <ul>
@@ -104,7 +104,7 @@ $this->title = 'shop';
             </div>
             <!-- // preference -->
             <!-- discounts -->
-            <div class="left-side">
+            <div class="left-side" style="overflow-y:auto; height: 160px">
                 <h3 class="shopf-sear-headits-sear-head">Language</h3>
                 <ul>
                     <?php foreach ($languages as $language): ?>
@@ -117,7 +117,7 @@ $this->title = 'shop';
             </div>
             <!-- //discounts -->
             <!-- Binding -->
-            <div class="left-side">
+            <div class="left-side" style="overflow-y:auto; height: 160px">
                 <h3 class="shopf-sear-headits-sear-head"><?= \common\models\Format::tableName() ?></h3>
                 <ul>
                     <?php foreach ($formats as $format): ?>
@@ -222,7 +222,7 @@ $this->title = 'shop';
                     <div class="col-md-3 product-men">
                         <div class="product-chr-info chr">
                             <div class="thumbnail">
-                                <a href="<?=\yii\helpers\Url::to(['site/single_product.php'])?>">
+                                <a href="<?=\yii\helpers\Url::to(['site/single-product', 'id'=>$book->id])?>">
                                     <img src="<?=$book->getImage()->getUrl()?>" alt="Book's image">
                                 </a>
                             </div>

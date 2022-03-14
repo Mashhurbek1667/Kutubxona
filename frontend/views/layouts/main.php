@@ -85,9 +85,9 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?=\yii\helpers\Url::to(['site/shop'])?>">product catalog</a>
                                 </li>
-                                <li>
-                                    <a href="<?=\yii\helpers\Url::to(['site/single_product'])?>">single product</a>
-                                </li>
+                                <!--<li>
+                                    <a href="<?/*=\yii\helpers\Url::to(['site/single_product'])*/?>">single product</a>
+                                </li>-->
                                 <li>
                                     <a href="<?=\yii\helpers\Url::to(['site/checkout'])?>">checkout</a>
                                 </li>

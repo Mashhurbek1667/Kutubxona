@@ -2,13 +2,13 @@
 
 /* @var $this yii\web\View
  *
- * @var $books [] common\models\Book
+ * @var $book common\models\Book
  *
  */
 
 use yii\web\View;
 
-$this->title = 'single_product';
+$this->title = 'single-product';
 ?>
 <!-- banner -->
 <div class="banner-bg-inner">
@@ -35,10 +35,10 @@ $this->title = 'single_product';
                     </a>
                 </li>
                 <li class="btn btn2">
-                    <a href="shop.php">Product Catalogue</a>
+                    <a href="<?=\yii\helpers\Url::to(['site/shop'])?>">Product Catalogue</a>
                 </li>
                 <li class="btn btn3">
-                    <a href="<?=\yii\helpers\Url::to(['site/single_product'])?>">Single product</a>
+                    <a href="<?=\yii\helpers\Url::to(['site/single-product','id'=>$book->id])?>">Single product</a>
                 </li>
             </ul>
         </div>
@@ -70,7 +70,6 @@ $this->title = 'single_product';
             </div>
 
         </div>
-        <?php foreach ($books as $book) : ?>
         <div class="col-md-8 single-right-left simpleCart_shelfItem">
             <h3>Be Creative
                 <span>Hardcover – Feb 2018</span>
@@ -98,7 +97,7 @@ $this->title = 'single_product';
                     <?php endfor; ?>
                 </ul>
                 <div class="clearfix"> </div>
-                <h6><?=$book->price?></h6>
+                <h6><?=$book->getPrice()?></h6>
             </div>
             <div class="desc_single">
                 <h5>Description</h5>
@@ -114,13 +113,14 @@ $this->title = 'single_product';
                     <li>
                         <span>publisher :</span> <?=$book->publisher->name?></li>
                     <li>
-                        <span>edition :</span> february 2018</li>
+                        <span>edition :</span> <?=$book->published?></li>
                     <li>
                         <span>pages :</span> <?=$book->page_count?></li>
                 </ul>
 
             </div>
-            <div class="color-quality">
+            <!--audio book and---------------------------------------------------------- paper book-->
+            <!--<div class="color-quality">
                 <div class="color-quality-right">
                     <h5>Also Formats avaiable in:</h5>
                     <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
@@ -128,7 +128,7 @@ $this->title = 'single_product';
                         <option value="null">Audio Book &nbsp;$200.00</option>
                     </select>
                 </div>
-            </div>
+            </div>-->
             <div class="clearfix"></div>
             <div class="description">
                 <h5>Check delivery, payment options and charges at your location</h5>
@@ -152,7 +152,6 @@ $this->title = 'single_product';
                 </div>
             </div>
         </div>
-        <?php endforeach;?>
         <div class="clearfix"> </div>
     </div>
 </div>
