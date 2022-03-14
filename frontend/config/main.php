@@ -43,6 +43,13 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'about'=>'site/about',
+                'shop'=>'site/shop',
+                'checkout'=>'site/checkout',
+                'single-product'=>'site/single-product',
+                'payment'=>'site/payment',
+                'contact'=>'site/contact',
+                'login'=>'site/login',
             ],
         ],
 
