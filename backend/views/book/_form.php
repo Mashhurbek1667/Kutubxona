@@ -26,21 +26,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'page_count')->textInput() ?>
 
-    <?= $form->field($model, 'author_id')->textInput() ?>
+    <?//= $form->field($model, 'author_id')->textInput() ?>
 
-    <?= $form->field($model, 'language_id')->textInput() ?>
+    <?//= $form->field($model, 'language_id')->textInput() ?>
 
-    <?= $form->field($model, 'format_id')->textInput() ?>
+    <?//= $form->field($model, 'format_id')->textInput() ?>
 
-    <?= $form->field($model, 'publisher_id')->textInput() ?>
+    <?//= $form->field($model, 'publisher_id')->textInput() ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
+    <?//= $form->field($model, 'category_id')->textInput() ?>
 
     <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
+    <?//= $form->field($model, 'created_at')->textInput() ?>
 
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+    <?//= $form->field($model, 'updated_at')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

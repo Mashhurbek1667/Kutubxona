@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?//= $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'name') ?>
 
@@ -27,6 +27,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'price') ?>
 
     <?= $form->field($model, 'discount') ?>
+
+    <?= $form->field($model, 'page_count') ?>
 
     <?php // echo $form->field($model, 'description') ?>
 

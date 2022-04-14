@@ -104,7 +104,7 @@ $this->title = 'shop';
             </div>
             <!-- // preference -->
             <!-- discounts -->
-            <div class="left-side" style="overflow-y:auto; height: 160px">
+            <div class="left-side" style="overflow-y:auto; height: 230px">
                 <h3 class="shopf-sear-headits-sear-head">Language</h3>
                 <ul>
                     <?php foreach ($languages as $language): ?>

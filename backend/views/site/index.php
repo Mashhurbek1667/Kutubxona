@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Admin panel';
 ?>
 <div class="site-index">
 
@@ -98,6 +98,6 @@ $this->title = 'My Yii Application';
         </div>
     </div>
 
-    <a href="/admin/site/faker" class="btn btn-warning mt-5 float-right">Generate fake data</a>
+<!--    <a href="/admin/site/faker" class="btn btn-warning mt-5 float-right">Generate fake data</a>-->
 
 </div>

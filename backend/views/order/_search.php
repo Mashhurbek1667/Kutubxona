@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?//= $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'fullName') ?>
 
@@ -27,6 +27,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'country') ?>
 
     <?= $form->field($model, 'province') ?>
+    <?= $form->field($model, 'total_price') ?>
 
     <?php // echo $form->field($model, 'region') ?>
 
