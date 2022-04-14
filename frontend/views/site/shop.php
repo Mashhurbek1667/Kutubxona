@@ -55,21 +55,15 @@ $this->title = 'shop';
                 <ul>
                     <?php foreach ($categories as $category): ?>
                         <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span"><?= $category->name ?></span>
+                            <span class="span">
+                                <input style="margin-right: 4px;" type="checkbox" class="checked" value="<?= $category->id?>">
+                                <?= $category->name ?>
+                            </span>
                         </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
             <!-- // preference -->
-            <div class="search-hotel">
-                <h3 class="shopf-sear-headits-sear-head">
-                    <span><?= \common\models\Author::tableName() ?></span> in focus</h3>
-                <form action="#" method="post">
-                    <input type="search" placeholder="search here" name="search" required="">
-                    <input type="submit" value="Search">
-                </form>
-            </div>
             <!-- price range -->
             <div class="range">
                 <h3 class="shopf-sear-headits-sear-head">
@@ -209,7 +203,11 @@ $this->title = 'shop';
                 </ul>
             </div>
             <!-- //reviews -->
-
+            <div class="search-hotel">
+                <form action="_search_category.php" method="post">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
 
         </div>
         <!-- //product left -->

@@ -287,8 +287,8 @@ AppAsset::register($this);
     </div>
     <!-- //footer -->
     <div class="cpy-right">
-        <p>© 2018 Chronicle. All rights reserved | Design by
-            <a href="http://w3layouts.com"> W3layouts.</a>
+        <p>© 2018 Chronicle. All rights reserved | Design by<!--
+            <a href="http://w3layouts.com"> W3layouts.</a>-->
         </p>
     </div>
 
